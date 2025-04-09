@@ -89,6 +89,15 @@ body {
 
 @media (max-width: 480px) {
     .signup-container {
+        background-color: #ffffffdd;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        max-width: 380px;
+        width: 90%;
+        margin: 2rem 0 0 1rem;
+    }
+    .signup-container {
         padding: 1.5rem;
     }
 

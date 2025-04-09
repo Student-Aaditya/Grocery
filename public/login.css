@@ -118,6 +118,18 @@ body {
 
 @media (max-width: 480px) {
     .login-container {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        max-width: 360px;
+        width: 90%;
+        position: relative;
+        z-index: 1;
+        animation: slideIn 1s ease;
+        margin: 2rem 0 0 1rem;
+    }
+    .login-container {
         padding: 1.5rem;
     }
 
