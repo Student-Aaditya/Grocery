@@ -32,8 +32,6 @@ const sessionOption = ({
 })
 
 
-
-
 app.use(session(sessionOption));
 app.use(flash());
 app.use(passport.initialize());
@@ -54,9 +52,9 @@ async function main() {
     try {
         console.log("Attempting to connect to MongoDB...");
         await mongoose.connect("mongodb://127.0.0.1:27017/freshgroce", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 20000,  
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true,
+            // serverSelectionTimeoutMS: 20000,  
         });
         console.log("Successful connection to MongoDB");
     } catch (err) {
