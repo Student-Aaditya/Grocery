@@ -1,44 +1,45 @@
- <!-- Topbar Start -->
- <div class="container-fluid px-5 d-none d-lg-block">
-    <div class="row gx-5 py-3 align-items-center">
-        <div class="col-lg-3">
+<!-- ✅ Topbar (Visible on all devices) -->
+<div class="container-fluid px-3 px-lg-5 py-2 bg-light">
+    <div class="row align-items-center">
+        <div class="col-4 col-md-3">
             <div class="d-flex align-items-center justify-content-start">
-                <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
-                <h2 class="mb-0"><a href="/sign"><img src="network" alt=""></a></h2>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="d-flex align-items-center justify-content-center">
-                <a href="/" class="navbar-brand ms-lg-5">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Farm</span>Fresh</h1>
+                <!-- <i class="bi bi-phone-vibrate fs-4 text-primary me-2"></i> -->
+                <a href="/sign">
+                    <img src="logo.png" alt="Logo" style="max-height: 40px;">
                 </a>
-            </div>
+            </div>  
         </div>
-        <div class="col-lg-3">        
+        <div class="col-4 col-md-6 text-center">
+            <a href="/" class="navbar-brand m-0">
+                <h1 class="m-0 text-primary fs-4 fs-lg-2"><span class="text-secondary">Farm</span>Fresh</h1>
+            </a>
+        </div>
+        <div class="col-4 col-md-3">
             <div class="d-flex align-items-center justify-content-end">
                 <% if (user) { %>
-                <a class="btn btn-primary btn-square rounded-circle me-2" href="/sign"><i class="fa-solid fa-users-slash"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="/sign">
+                    <i class="fa-solid fa-users-slash"></i>
+                </a>
                 <% } else { %>
-                <a class="btn btn-primary btn-square rounded-circle me-2" href="/sign"><i class="fa-solid fa-user"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="/sign">
+                    <i class="fa-solid fa-user"></i>
+                </a>
                 <% } %>
-                <!-- <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a> -->
-                <!-- <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a> -->
-                <!-- <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a> -->
             </div>
         </div>
     </div>
 </div>
-<!-- Topbar End -->
 
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-    <a href="/" class="navbar-brand d-flex d-lg-none">
-        <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+<!-- ✅ Navbar (Responsive with toggle on mobile) -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-2 px-3 px-lg-5">
+    <a href="/" class="navbar-brand d-lg-none">
+        <h1 class="m-0 text-white fs-4"><span class="text-secondary">Farm</span>Fresh</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
             <a href="/" class="nav-item nav-link active">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
