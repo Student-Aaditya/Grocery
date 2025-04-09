@@ -1,0 +1,60 @@
+<% layout("/INCLUDE/boilerplate")%>
+
+<!-- <main class="flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow border-0 login-card">
+                    <div class="card-body p-4 p-md-5">
+                        <h1 class="text-center mb-4 fw-bold text-teal">SIGN UP</h1>
+
+                        <form action="/sign" method="POST" class="d-flex flex-column gap-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                <label for="username">Username</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <label for="email">Email</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                <label for="password">Password</label>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-gold w-100 py-2">SIGN UP</button>
+                            </div>
+
+                            <div class="text-center mt-2">
+                                <p class="small">Already have an account? 
+                                    <a href="/" class="text-decoration-none text-teal fw-medium">Login</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+ -->
+
+    <div class="signup-container">
+        <form class="signup-form" onsubmit="return validateSignup()"  method="POST" action="/sign">
+            <h2 class="signup-title">
+                <span>Create Your Account</span>
+                <img src="logo.png" alt="logo">
+              </h2>
+            <p>Join FreshGroce today</p>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+            <p class="login-link">Already have an account? <a href="/login">Login</a></p>
+        </form>
+    </div>
+

@@ -1,0 +1,132 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #b9fbc0, #d0f4de);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-leaf {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/leaf.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 360px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    animation: slideIn 1s ease;
+    margin: 2rem 0 0 35rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.login-form h2 {
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+    text-align: center;
+}
+
+.login-form p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #66bb6a;
+    outline: none;
+    box-shadow: 0 0 5px #66bb6a66;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #66bb6a, #43a047);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background: linear-gradient(to right, #43a047, #2e7d32);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #444;
+}
+
+.signup-link a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .login-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-form input,
+    .login-form button {
+        font-size: 0.95rem;
+    }
+}
