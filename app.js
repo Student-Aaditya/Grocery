@@ -152,6 +152,9 @@ app.get("/logout", (req, res) => {
     }
 })
 
+app.get("/cart",(req,res)=>{
+    res.render("cart.ejs");
+})
 
 app.listen(port,(req,res)=>{
     console.log(`server working on ${port}`);
