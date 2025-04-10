@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FreshGroce Slider</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9fdfb;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d6a4f;
+      margin: 1rem 0;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow-x: auto;
+      display: flex;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .product-card {
+      min-width: 180px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .price-tag {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 0 0 12px 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .product-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 1.5rem auto 1rem;
+      display: block;
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .add-btn {
+      background-color: #52b788;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #40916c;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Popular Picks</h2>
+
+<div class="slider-wrapper" style="position: relative;">
+  <button class="arrow left" onclick="scrollSlider(-200)">‹</button>
+  <div class="slider-container" id="slider">
+    <!-- Product Card -->
+    <div class="product-card">
+      <div class="price-tag">₹5/500g</div>
+      <img src="https://i.imgur.com/Vr4Yc1n.png" class="product-img" alt="Tomato">
+      <div class="product-name">Tomato Hybrid</div>
+      <button class="add-btn">ADD</button>
+    </div>
+
+    <div class="product-card">
+      <div class="price-tag">₹5/500g</div>
+      <img src="https://i.imgur.com/J9yxRzB.png" class="product-img" alt="Red Carrot">
+      <div class="product-name">Red Carrot Premium</div>
+      <button class="add-btn">ADD</button>
+    </div>
+
+    <div class="product-card">
+      <div class="price-tag">₹9/250g</div>
+      <img src="https://i.imgur.com/XWzFvqz.png" class="product-img" alt="Coriander">
+      <div class="product-name">Coriander</div>
+      <button class="add-btn">ADD</button>
+    </div>
+
+    <div class="product-card">
+      <div class="price-tag">₹15/600g</div>
+      <img src="https://i.imgur.com/4M8TWDN.png" class="product-img" alt="Cauliflower">
+      <div class="product-name">Cauliflower (L)</div>
+      <button class="add-btn">ADD</button>
+    </div>
+
+    <div class="product-card">
+      <div class="price-tag">₹81/200g</div>
+      <img src="https://i.imgur.com/nAb9Tqv.png" class="product-img" alt="Paneer">
+      <div class="product-name">Farm Tale Malai Paneer</div>
+      <div class="product-desc">(Buffalo Milk)</div>
+      <button class="add-btn">ADD</button>
+    </div>
+
+    <div class="product-card">
+      <div class="price-tag">₹29/500g</div>
+      <img src="https://i.imgur.com/RdiL7FN.png" class="product-img" alt="Green Peas">
+      <div class="product-name">Green Peas</div>
+      <button class="add-btn">ADD</button>
+    </div>
+  </div>
+  <button class="arrow right" onclick="scrollSlider(400)">›</button>
+</div>
+
+<script>
+  function scrollSlider(px) {
+    const slider = document.getElementById('slider');
+    slider.scrollBy({ left: px, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

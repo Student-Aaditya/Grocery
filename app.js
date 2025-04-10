@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express=require("express");
 const app=express();
 const port=8025;
@@ -11,7 +13,8 @@ const passport=require("passport");
 const passportLocal=require("passport-local");
 const User=require("./Model/user.js");
 const mongoose=require("mongoose");
-
+const MONGO=process.env.MONGO;
+const rateLimit = require('express-rate-limit');
 
 app.set("views",path.join(__dirname,"view"));
 app.set("view engine","ejs");
@@ -48,13 +51,22 @@ app.use((req,res,next)=>{
     next();
 })
 
+
+const globallimit=rateLimit({
+    window:10 *60*1000,
+    max:5,
+    message:{message:"too many time login please login after some time"},
+    standarHeaders:true,
+    legacyHeaders:false
+});
+
 async function main() {
     try {
         console.log("Attempting to connect to MongoDB...");
-        await mongoose.connect("mongodb://127.0.0.1:27017/freshgroce", {
-            // useNewUrlParser: true,
-            // useUnifiedTopology: true,
-            // serverSelectionTimeoutMS: 20000,  
+        await mongoose.connect(MONGO, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 20000,  
         });
         console.log("Successful connection to MongoDB");
     } catch (err) {
@@ -109,13 +121,15 @@ app.get("/testimonial",(req,res)=>{
     res.render("testimonial.ejs");
 })
 
-
+app.get("/category",(req,res)=>{
+    res.render("category.ejs");
+})
 
 app.get("/sign",(req,res)=>{
     res.render("sign.ejs");
 })
 
-app.post("/sign",async (req,res)=>{
+app.post("/sign",globallimit,async (req,res)=>{
     try{
         let {username,email,password}=req.body;
         const newUser=new User({email,username});
@@ -132,7 +146,7 @@ app.get("/login",(req,res)=>{
     res.render("login.ejs");
 })
 
-app.post("/login", passport.authenticate("local", { failureRedirect: "/login", failureFlash: true }), async (req, res) => {
+app.post("/login",globallimit, passport.authenticate("local", { failureRedirect: "/login", failureFlash: true }), async (req, res) => {
     console.log("login");
     res.redirect("/");
 })
@@ -152,6 +166,9 @@ app.get("/logout", (req, res) => {
     }
 })
 
+app.get("/slider",(req,res)=>{
+    res.render("slider.ejs");
+})
 app.get("/cart",(req,res)=>{
     res.render("cart.ejs");
 })

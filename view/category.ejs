@@ -1,0 +1,238 @@
+<% layout("/INCLUDE/boilerplate")%> 
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0faf1;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #2d6a4f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    .navbar nav a:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .search-bar input {
+      padding: 0.6rem 1rem;
+      width: 300px;
+      max-width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d6a4f;
+      margin-bottom: 1rem;
+    }
+
+    .containers {
+      /* display: grid; */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .veg-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .veg-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #40916c;
+      margin: 0.5rem 0;
+    }
+
+    .price {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .quantity-control,
+    .add-cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn, .add-btn {
+      padding: 0.5rem 1rem;
+      background: #52b788;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover, .add-btn:hover {
+      background: #40916c;
+    }
+
+    .quantity {
+      font-size: 1.1rem;
+      min-width: 24px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2d6a4f;
+      color: white;
+      margin-top: 2rem;
+      font-weight: 500;
+    } */
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">FreshGroce</div>
+  <nav>
+    <a href="#">Leafy Vegetables</a>
+    <a href="#">Exotic Veg</a>
+    <a href="#">Fresh Fruits</a>
+    <a href="#">Combos</a>
+  </nav>
+</div>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search vegetables...">
+</div>
+
+<h1>Shop Fresh Vegetables</h1>
+
+<div class="containers" id="veg-list">
+  <!-- Cards will be populated here -->
+</div>
+<!-- 
+<footer>
+  © 2025 FreshGroce — Delivered Fresh to Your Door
+</footer> -->
+
+<script>
+  const vegetables = [
+    { name: "Tomato", price: 30, img: "https://i.imgur.com/Vr4Yc1n.png" },
+    { name: "Potato", price: 25, img: "https://i.imgur.com/h1tIhnu.png" },
+    { name: "Carrot", price: 40, img: "https://i.imgur.com/J9yxRzB.png" },
+    { name: "Broccoli", price: 60, img: "https://i.imgur.com/XWzFvqz.png" },
+    { name: "Cucumber", price: 35, img: "https://i.imgur.com/jnlNXXd.png" },
+    { name: "Spinach", price: 20, img: "https://i.imgur.com/VEf3UWx.png" },
+    { name: "Capsicum", price: 50, img: "https://i.imgur.com/YoQ9g7C.png" },
+    { name: "Beetroot", price: 45, img: "https://i.imgur.com/8n06oIg.png" },
+    { name: "Cauliflower", price: 55, img: "https://i.imgur.com/4M8TWDN.png" }
+  ];
+
+  const quantities = Array(vegetables.length).fill(0);
+  const vegList = document.getElementById("veg-list");
+
+  function displayVegetables() {
+    vegList.innerHTML = "";
+    vegetables.forEach((veg, index) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.setAttribute("data-name", veg.name.toLowerCase());
+      card.innerHTML = `
+        <img src="${veg.img}" class="veg-img" alt="${veg.name}">
+        <div class="veg-name">${veg.name}</div>
+        <div class="price">₹${veg.price} / kg</div>
+
+        <div class="add-cart" id="add-${index}">
+          <button class="add-btn" onclick="addToCart(${index})">Add to Cart</button>
+        </div>
+
+        <div class="quantity-control hidden" id="qty-control-${index}">
+          <button class="btn" onclick="decrease(${index})">-</button>
+          <div class="quantity" id="qty-${index}">1</div>
+          <button class="btn" onclick="increase(${index})">+</button>
+        </div>
+      `;
+      vegList.appendChild(card);
+    });
+  }
+
+  function addToCart(index) {
+    quantities[index] = 1;
+    document.getElementById(qty-${index}).textContent = quantities[index];
+    document.getElementById(add-${index}).classList.add("hidden");
+    document.getElementById(qty-control-${index}).classList.remove("hidden");
+  }
+
+  function increase(index) {
+    quantities[index]++;
+    document.getElementById(qty-${index}).textContent = quantities[index];
+  }
+
+  function decrease(index) {
+    if (quantities[index] > 1) {
+      quantities[index]--;
+      document.getElementById(qty-${index}).textContent = quantities[index];
+    } else {
+      quantities[index] = 0;
+      document.getElementById(qty-control-${index}).classList.add("hidden");
+      document.getElementById(add-${index}).classList.remove("hidden");
+    }
+  }
+
+  function filterProducts() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      const name = card.getAttribute("data-name");
+      card.style.display = name.includes(input) ? "block" : "none";
+    });
+  }
+
+  displayVegetables();
+</script>
+
