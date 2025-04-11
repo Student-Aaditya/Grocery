@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, #b9fbc0, #d0f4de);
+    /* background: linear-gradient(135deg, #b9fbc0, #d0f4de); */
     justify-content: center;
     align-items: center;
     height: 100vh;

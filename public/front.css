@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .back{
+    background-color: white;
+  }
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .front-view {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(246, 236, 236);
+    box-shadow: 4px 5px 3px grey;
+    height: 100vh;
+    max-height: 500px;
+    overflow: hidden;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .front-view-img {
+    flex: 1;
+    background-image: url("v.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .front-view-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .front-view-detail h1 {
+    color: red;
+    font-size: 3rem;
+  }
+
+  .front-view-detail span {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    margin-top: 2rem;
+  }
+
+  .btn button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    background-color: greenyellow;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn button a {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* Responsive for tablets and phones */
+  @media (max-width: 768px) {
+    .front-view {
+      /* flex-direction: column; */
+      display: block;
+      height: auto;
+      max-height: none;
+    }
+
+    .front-view-img {
+      height: 250px;
+      width: 100%;
+    }
+
+    .front-view-detail {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .front-view-detail h1 {
+      font-size: 2rem;
+    }
+
+    .front-view-detail span {
+      font-size: 1.2rem;
+    }
+
+    .btn button {
+      font-size: 1rem;
+    }
+  }
+
+  /* banner css */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card {
+    position: relative;
+    width: 85rem;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 0 0 4rem;
+  }
+
+  .card h4 {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .card h2 {
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    margin: 0.5rem 0;
+  }
+
+  .card p {
+    margin-bottom: 2rem;
+  }
+
+  .card img {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 50%;
+    height: 6rem;
+    border-radius: .5rem;
+  }
+
+  .card button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 8rem;
+  }
+
+  .vegetable {
+    background: linear-gradient(to bottom right, #5f9459, #99c98d);
+  }
+
+  .fruit {
+    background: linear-gradient(to bottom right, #d6a85b, #e6c982);
+  }
+  .card button a{
+      text-decoration: none;
+      /* width: 2rem; */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: left;
+      margin: 0 1rem 0 0;
+    }
+
+    .card img {
+      position: static;
+      max-width: 60%;
+      align-self: center;
+      margin-top: 1rem;
+    }
+
+    .card {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .card button {
+      margin: 0 0 0 8rem;
+    }
+  }

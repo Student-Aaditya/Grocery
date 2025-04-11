@@ -1,68 +1,40 @@
 <% layout("/INCLUDE/boilerplate")%> 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="carousel-1.jpg" alt="Image">
-                    <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
-                        <div class="text-start p-5" style="max-width: 900px;">
-                            <h3 class="text-white">Organic Vegetables</h3>
-                            <h1 class="display-1 text-white mb-md-4">Organic Vegetables For Healthy Life</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Explore</a>
-                            <a href="" class="btn btn-secondary py-md-3 px-md-5">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
-                        <div class="text-start p-5" style="max-width: 900px;">
-                            <h3 class="text-white">Organic Fruits</h3>
-                            <h1 class="display-1 text-white mb-md-4">Organic Fruits For Better Health</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Explore</a>
-                            <a href="" class="btn btn-secondary py-md-3 px-md-5">Contact</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+     <div class="back">
+    <div class="front-view">
+        <div class="front-view-img"></div>
+        <div class="front-view-detail">  
+          <h1>Start Shopping At Home</h1>
+          <span>save your money & save your time...</span>
+          <div class="btn">
+            <button type="button"><a href="">Shop Now</a></button>
+          </div>
         </div>
-    </div>
+      </div>
     <!-- Carousel End -->
 
 
     <!-- Banner Start -->
-    <div class="container-fluid banner mb-5">
-        <div class="container">
-            <div class="row gx-0">
-                <div class="col-md-6">
-                    <div class="bg-primary bg-vegetable d-flex flex-column justify-content-center p-5" style="height: 300px;">
-                        <h3 class="text-white mb-3">Organic Vegetables</h3>
-                        <p class="text-white">Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam</p>
-                        <a class="text-white fw-bold" href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bg-secondary bg-fruit d-flex flex-column justify-content-center p-5" style="height: 300px;">
-                        <h3 class="text-white mb-3">Organic Fruits</h3>
-                        <p class="text-white">Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam</p>
-                        <a class="text-white fw-bold" href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="card vegetable">
+          <h4>Vegetable</h4>
+          <h2>Fresh & Green</h2>
+          <p>Get 10% OFF on selected items.</p>
+          <br>
+          <button><a href="">Shop more</a></button>
+          <img src="v.webp" alt="Vegetable Basket" />
         </div>
-    </div>
+    
+        <div class="card fruit">
+          <h4>Fruit</h4>
+          <h2>Fresh & Healthy</h2>
+          <p>Get 10% OFF on selected items.</p>
+          <br>
+          <button><a href="">Shop more</a></button>
+          <img src="ve.webp" alt="Fruit Basket" />
+        </div>
+      </div>
     <!-- Banner Start -->
 
 
@@ -350,126 +322,19 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
-                <h6 class="text-primary text-uppercase">The Team</h6>
-                <h1 class="display-5">We Are Professional Organic Farmers</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="row g-0">
-                        <div class="col-10">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="team-1.jpg" alt="">
-                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="row g-0">
-                        <div class="col-10">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="team-2.jpg" alt="">
-                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="row g-0">
-                        <div class="col-10">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="team-3.jpg" alt="">
-                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- Team End -->
 
 
     <!-- Blog Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
-                <h6 class="text-primary text-uppercase">Our Blog</h6>
-                <h1 class="display-5">Latest Articles From Our Blog Post</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="blog-1.jpg" alt="">
-                        <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="blog-2.jpg" alt="">
-                        <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="blog-3.jpg" alt="">
-                        <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- Blog End -->
     
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</div>
+</div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

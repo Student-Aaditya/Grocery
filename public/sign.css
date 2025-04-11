@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    /* background: linear-gradient(135deg, #a8e6cf, #dcedc1); */
     /* display: flex; */
     justify-content: center;
     align-items: center;

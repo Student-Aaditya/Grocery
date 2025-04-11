@@ -63,7 +63,7 @@ const globallimit=rateLimit({
 async function main() {
     try {
         console.log("Attempting to connect to MongoDB...");
-        await mongoose.connect(MONGO, {
+        await mongoose.connect("mongodb://127.0.0.1:27017/grocery", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             serverSelectionTimeoutMS: 20000,  
