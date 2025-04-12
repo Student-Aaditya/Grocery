@@ -63,6 +63,9 @@
     text-decoration: none;
     color: black;
   }
+  .item{
+    display: flex;
+  }
 
   /* Responsive for tablets and phones */
   @media (max-width: 768px) {
@@ -93,6 +96,9 @@
 
     .btn button {
       font-size: 1rem;
+    }
+    .item{
+      display: grid;
     }
   }
 
