@@ -102,11 +102,12 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    padding: 1rem;
   }
-
+  
   .card {
     position: relative;
-    width: 85rem;
+    width: 100%;
     max-width: 400px;
     padding: 2rem;
     border-radius: 20px;
@@ -115,33 +116,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 0 0 4rem;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
-
+  
   .card h4 {
     font-size: 1rem;
     opacity: 0.9;
   }
-
+  
   .card h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
     margin: 0.5rem 0;
   }
-
+  
   .card p {
     margin-bottom: 2rem;
   }
-
+  
   .card img {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
     max-width: 50%;
     height: 6rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
-
+  
   .card button {
     background: white;
     color: black;
@@ -154,40 +156,45 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    width: 8rem;
+    width: fit-content;
   }
-
+  
+  .card button a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
   .vegetable {
     background: linear-gradient(to bottom right, #5f9459, #99c98d);
   }
-
+  
   .fruit {
     background: linear-gradient(to bottom right, #d6a85b, #e6c982);
   }
-  .card button a{
-      text-decoration: none;
-      /* width: 2rem; */
-  }
-
+  
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
-      align-items: left;
-      margin: 0 1rem 0 0;
+      align-items: center;
+      padding: 1rem;
     }
-
+  
+    .card {
+      padding: 2rem 1rem;
+      text-align: center;
+      margin: 0 auto;
+    }
+  
     .card img {
       position: static;
       max-width: 60%;
-      align-self: center;
-      margin-top: 1rem;
+      height: auto;
+      margin: 1rem auto 0;
     }
-
-    .card {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+  
     .card button {
-      margin: 0 0 0 8rem;
+      margin: 0 auto;
+      justify-content: center;
     }
   }
+  

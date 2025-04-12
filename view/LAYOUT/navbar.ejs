@@ -32,14 +32,14 @@
 
 <style>
     .container-fluid form{
-        margin: 0 0 0 4rem;
+        margin: 0 0 0 0rem;
     }
     .container-fluid a{
-        margin: 0 0 0 3rem;
+        margin: 0 0 0 2rem;
         font-size: 1.2rem;
     }
     .collapse{
-        margin: 0 0 0 34rem;
+        margin: 0 0 0 5rem;
     }
     .form-control {
       height: 2rem;
@@ -57,40 +57,34 @@
     }
 </style> 
 <!-- ✅ Navbar (Responsive with toggle on mobile) -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" >
-    <div class="container-fluid">
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="/cart" role="button"  aria-expanded="false">
-              Shop
-            </a>
-            <!-- <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul> -->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/cart" ><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-        
-      </div>
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm mt-2">
+  <div class="container-fluid px-3 px-lg-5">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+      </ul>
+      <form class="d-flex mt-2 mt-lg-0" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
