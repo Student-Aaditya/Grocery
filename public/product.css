@@ -24,6 +24,7 @@
   display: block;
   border-bottom: 1px solid #eee;
   object-fit: cover;
+  height: 10rem;
 }
 
 .discount-badge {
