@@ -1,138 +1,187 @@
 .product-card {
-    width: 100%;
-    max-width: 250px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: 1rem 0 0 5rem;
-    font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  max-width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 1rem auto; /* Center on smaller screens */
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #eee;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2e7d32;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.wishlist-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.product-details {
+  padding: 0.8rem 1rem;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  color: #fbc02d;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 0.85rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.quantity-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 4px 8px;
+  gap: 0.5rem;
+  background: #f9f9f9;
+}
+
+.quantity-selector button {
+  background: #e0e0e0;
+  border: none;
+  padding: 4px 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  margin-top: 1rem;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #256429;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .item1{
+    display: grid;
   }
-  
-  .product-image {
-    position: relative;
-    overflow: hidden;
+  .product-card {
+    max-width: 90%;
+    margin: 1rem auto;
   }
-  
-  .product-image img {
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #eee;
+  .item3{
+    display: grid;
   }
-  
-  .discount-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #2e7d32;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 4px;
+  .item1{
+    display: grid;
   }
-  
-  .wishlist-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    color: #555;
-    cursor: pointer;
+  .item2{
+    display: grid;
   }
-  
-  .product-details {
-    padding: 0.8rem 1rem;
+  .item4{
+    display: grid;
   }
-  
   .product-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
-  
-  .star {
-    color: #fbc02d;
-  }
-  
-  .price-section {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .price {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  .original-price {
-    text-decoration: line-through;
-    color: gray;
-    font-size: 0.85rem;
-  }
-  
-  .product-name {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    color: #333;
-  }
-  
+
   .quantity-selector {
+    font-size: 0.9rem;
+  }
+}
+
+/* Optional grid responsiveness for container */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+
+@media (min-width: 1024px) {
+  .products-container {
+    justify-content: flex-start;
+  }
+  .item3{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 4px 8px;
-    gap: 0.5rem;
-    background: #f9f9f9;
   }
-  
-  .quantity-selector button {
-    background: #e0e0e0;
-    border: none;
-    padding: 4px 8px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+  .item1{
+    display: flex;
   }
-  
-  .add-to-cart {
-    margin-top: 1rem;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
+  .item2{
+    display: flex;
   }
-  
-  .add-to-cart:hover {
-    background-color: #256429;
+  .item4{
+    display: flex;
   }
-  
-  /* Responsive */
-  @media (max-width: 576px) {
-    .product-card {
-      max-width: 90%;
-    }
-  
-    .product-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.2rem;
-    }
-  
-    .quantity-selector {
-      font-size: 0.9rem;
-    }
-  }
+}
